@@ -19,8 +19,7 @@ import {
 } from "antd"
 import { 
     EyeOutlined, 
-    EditOutlined, 
-    DeleteOutlined, 
+    EditOutlined,  
     SearchOutlined,
     UserOutlined,
     PhoneOutlined,
@@ -143,7 +142,7 @@ const CustomerManagement = () => {
         setIsModalVisible(true)
     }
 
-    const handleStatusChange = (customerId: string, newStatus: string) => {
+    const handleStatusChange = (customerId: string) => {
         message.success(`Đã cập nhật trạng thái khách hàng ${customerId}`)
     }
 
@@ -168,7 +167,7 @@ const CustomerManagement = () => {
         {
             title: 'Khách hàng',
             key: 'customer',
-            render: (_, record: any) => (
+            render: (_: any, record: any) => (
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     <Avatar 
                         size={40} 
@@ -185,7 +184,7 @@ const CustomerManagement = () => {
         {
             title: 'Liên hệ',
             key: 'contact',
-            render: (_, record: any) => (
+            render: (_: any, record: any) => (
                 <div>
                     <div style={{ fontSize: '14px' }}>
                         <MailOutlined style={{ marginRight: '4px' }} />
@@ -211,7 +210,7 @@ const CustomerManagement = () => {
         {
             title: 'Đơn hàng',
             key: 'orders',
-            render: (_, record: any) => (
+            render: (_: any, record: any) => (
                 <div>
                     <div style={{ fontWeight: 'bold', color: '#1890ff' }}>
                         {record.totalOrders} đơn
@@ -241,7 +240,7 @@ const CustomerManagement = () => {
                     value={status}
                     style={{ width: 120 }}
                     size="small"
-                    onChange={(value) => handleStatusChange(record.id, value)}
+                    onChange={() => handleStatusChange(record.id)}
                 >
                     <Option value="active">Hoạt động</Option>
                     <Option value="inactive">Không hoạt động</Option>
@@ -252,7 +251,7 @@ const CustomerManagement = () => {
         {
             title: 'Thao tác',
             key: 'action',
-            render: (_, record: any) => (
+            render: (_: any, record: any) => (
                 <Space size="small">
                     <Button
                         type="text"

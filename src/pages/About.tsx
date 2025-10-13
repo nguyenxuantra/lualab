@@ -1,4 +1,4 @@
-import { Card, Row, Col, Typography, Space, Avatar, Timeline, Statistic } from "antd"
+import { Card, Row, Col, Typography, Avatar, Timeline, Statistic } from "antd"
 import { 
     TeamOutlined, 
     TrophyOutlined, 
@@ -6,8 +6,7 @@ import {
     StarOutlined,
     EnvironmentOutlined,
     PhoneOutlined,
-    MailOutlined,
-    GlobalOutlined
+    MailOutlined
 } from "@ant-design/icons"
 
 const { Title, Paragraph } = Typography
@@ -340,7 +339,7 @@ const About = () => {
                     Hành trình phát triển
                 </Title>
                 <Timeline
-                    items={achievements.map((achievement, index) => ({
+                    items={achievements.map((achievement) => ({
                         color: '#667eea',
                         children: (
                             <div>

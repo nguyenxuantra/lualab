@@ -17,10 +17,8 @@ import {
 } from "antd"
 import { 
     EyeOutlined, 
-    EditOutlined, 
     SearchOutlined,
     CheckCircleOutlined,
-    CloseCircleOutlined,
     TruckOutlined,
     ClockCircleOutlined
 } from "@ant-design/icons"
@@ -34,7 +32,7 @@ const OrderManagement = () => {
     const [searchText, setSearchText] = useState("")
     const [statusFilter, setStatusFilter] = useState("all")
 
-    // Mock data
+    // Mock dat
     const orders = [
         {
             key: '1',
@@ -120,34 +118,12 @@ const OrderManagement = () => {
         }).format(price)
     }
 
-    const getStatusColor = (status: string) => {
-        const colors: { [key: string]: string } = {
-            'pending': 'orange',
-            'processing': 'blue',
-            'shipped': 'cyan',
-            'delivered': 'green',
-            'cancelled': 'red'
-        }
-        return colors[status] || 'default'
-    }
-
-    const getStatusText = (status: string) => {
-        const texts: { [key: string]: string } = {
-            'pending': 'Chờ xử lý',
-            'processing': 'Đang xử lý',
-            'shipped': 'Đang giao',
-            'delivered': 'Đã giao',
-            'cancelled': 'Đã hủy'
-        }
-        return texts[status] || status
-    }
-
     const handleViewOrder = (record: any) => {
         setSelectedOrder(record)
         setIsModalVisible(true)
     }
 
-    const handleStatusChange = (orderId: string, newStatus: string) => {
+    const handleStatusChange = (orderId: string) => {
         message.success(`Đã cập nhật trạng thái đơn hàng ${orderId}`)
     }
 
@@ -180,7 +156,7 @@ const OrderManagement = () => {
         {
             title: 'Khách hàng',
             key: 'customer',
-            render: (_, record: any) => (
+            render: (_: any, record: any) => (
                 <div>
                     <div style={{ fontWeight: 'bold' }}>{record.customerName}</div>
                     <div style={{ fontSize: '12px', color: '#666' }}>{record.customerPhone}</div>
@@ -217,7 +193,7 @@ const OrderManagement = () => {
                     value={status}
                     style={{ width: 120 }}
                     size="small"
-                    onChange={(value) => handleStatusChange(record.orderId, value)}
+                    onChange={() => handleStatusChange(record.orderId)}
                 >
                     <Option value="pending">Chờ xử lý</Option>
                     <Option value="processing">Đang xử lý</Option>
@@ -244,7 +220,7 @@ const OrderManagement = () => {
         {
             title: 'Thao tác',
             key: 'action',
-            render: (_, record: any) => (
+            render: (_: any, record: any) => (
                 <Space size="small">
                     <Button
                         type="text"

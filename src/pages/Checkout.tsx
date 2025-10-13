@@ -15,7 +15,6 @@ import {
     Modal
 } from "antd"
 import { 
-    ShoppingCartOutlined, 
     ArrowLeftOutlined,
     CheckCircleOutlined,
     CreditCardOutlined,
@@ -37,7 +36,7 @@ const Checkout = () => {
     const navigate = useNavigate()
     const [form] = Form.useForm()
     const [cartItems, setCartItems] = useState<CartItem[]>([])
-    const [currentStep, setCurrentStep] = useState(0)
+    const [currentStep, _] = useState(0)
     const [isModalVisible, setIsModalVisible] = useState(false)
 
     useEffect(() => {

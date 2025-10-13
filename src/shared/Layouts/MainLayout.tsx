@@ -1,6 +1,6 @@
 import { Layout, Menu, Input, Button, Badge, Space, Typography } from "antd"
 import { Outlet, Link, useNavigate } from "react-router-dom"
-import { ShoppingCartOutlined, SearchOutlined, UserOutlined, HeartOutlined } from "@ant-design/icons"
+import { ShoppingCartOutlined, UserOutlined, HeartOutlined } from "@ant-design/icons"
 import { useState } from "react"
 
 const { Header, Content, Footer } = Layout

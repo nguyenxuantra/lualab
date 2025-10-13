@@ -8,8 +8,7 @@ import {
     Input, 
     Button, 
     message,
-    Space,
-    Divider
+    Space
 } from "antd"
 import { 
     EnvironmentOutlined,
@@ -30,7 +29,7 @@ const Contact = () => {
     const [form] = Form.useForm()
     const [loading, setLoading] = useState(false)
 
-    const handleSubmit = async (values: any) => {
+    const handleSubmit = async () => {
         setLoading(true)
         
         // Simulate API call

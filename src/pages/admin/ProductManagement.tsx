@@ -56,12 +56,12 @@ const ProductManagement = () => {
         setIsModalVisible(true)
     }
 
-    const handleDelete = (id: number) => {
+    const handleDelete = () => {
         message.success('Đã xóa sản phẩm')
     }
 
     const handleModalOk = () => {
-        form.validateFields().then((values) => {
+        form.validateFields().then(() => {
             if (editingProduct) {
                 message.success('Đã cập nhật sản phẩm')
             } else {
@@ -182,7 +182,7 @@ const ProductManagement = () => {
         {
             title: 'Thao tác',
             key: 'action',
-            render: (_, record: any) => (
+            render: (_: any, record: any) => (
                 <Space size="small">
                     <Button
                         type="text"
@@ -199,7 +199,7 @@ const ProductManagement = () => {
                     />
                     <Popconfirm
                         title="Bạn có chắc chắn muốn xóa sản phẩm này?"
-                        onConfirm={() => handleDelete(record.id)}
+                        onConfirm={() => handleDelete()}
                         okText="Xóa"
                         cancelText="Hủy"
                     >

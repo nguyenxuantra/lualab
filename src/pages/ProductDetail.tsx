@@ -10,10 +10,8 @@ import {
     Tag, 
     Button, 
     InputNumber, 
-    Divider,
     Tabs,
     Image,
-    Carousel,
     Empty,
     Breadcrumb
 } from "antd"
@@ -21,8 +19,6 @@ import {
     ShoppingCartOutlined, 
     HeartOutlined, 
     ShareAltOutlined,
-    LeftOutlined,
-    RightOutlined
 } from "@ant-design/icons"
 import { products, type Product } from "../data/products"
 
@@ -33,7 +29,6 @@ const ProductDetail = () => {
     const { id } = useParams<{ id: string }>()
     const [product, setProduct] = useState<Product| null>(null)
     const [quantity, setQuantity] = useState(1)
-    const [selectedImage, setSelectedImage] = useState(0)
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {

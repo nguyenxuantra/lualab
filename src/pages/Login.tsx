@@ -37,19 +37,6 @@ const Login = () => {
         }, 1000)
     }
 
-    const handleDemoLogin = (type: 'user' | 'admin') => {
-        if (type === 'admin') {
-            form.setFieldsValue({
-                username: 'admin',
-                password: 'admin123'
-            })
-        } else {
-            form.setFieldsValue({
-                username: 'user',
-                password: 'user123'
-            })
-        }
-    }
 
     return (
         <div style={{
