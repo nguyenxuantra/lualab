@@ -53,7 +53,7 @@ const MainLayout = () => {
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     <div style={{ display: 'flex', alignItems: 'center', marginRight: '40px' }}>
                         <img 
-                            src="/src/assets/logo.jpg" 
+                            src="/src/assets/logo.webp" 
                             alt="Lualab Logo" 
                             style={{ height: '40px', marginRight: '12px' }}
                         />
