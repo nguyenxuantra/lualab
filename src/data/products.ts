@@ -19,6 +19,13 @@ export interface Product {
   tags: string[];
 }
 
+// Import product images instead of using direct paths
+import sp1 from "../assets/sanpham1.webp";
+import sp2 from "../assets/sanpham2.webp";
+import sp3 from "../assets/sanpham3.webp";
+import sp4 from "../assets/sanpham4.webp";
+import sp5 from "../assets/sanpham5.webp";
+
 export const products: Product[] = [
   {
     id: 1,
@@ -29,9 +36,9 @@ export const products: Product[] = [
     description: "Lualab Signature là dòng nước hoa cao cấp với hương thơm độc đáo, kết hợp giữa sự sang trọng và hiện đại. Sản phẩm được chế tác từ những nguyên liệu quý hiếm nhất, mang đến trải nghiệm khứu giác tuyệt vời.",
     shortDescription: "Nước hoa cao cấp với hương thơm độc đáo và sang trọng",
     images: [
-      "/src/assets/sanpham1.webp",
-      "/src/assets/sanpham2.webp",
-      "/src/assets/sanpham3.webp"
+      sp1,
+      sp2,
+      sp3
     ],
     category: "Premium",
     gender: "unisex",
@@ -52,8 +59,8 @@ export const products: Product[] = [
     description: "Lualab Midnight là dòng nước hoa nam với hương thơm mạnh mẽ và quyến rũ. Với sự kết hợp của gỗ đàn hương và hổ phách, tạo nên một mùi hương đầy nam tính và bí ẩn.",
     shortDescription: "Nước hoa nam với hương thơm mạnh mẽ và quyến rũ",
     images: [
-      "/src/assets/sanpham2.webp",
-      "/src/assets/sanpham3.webp"
+      sp2,
+      sp3
     ],
     category: "Men",
     gender: "male",
@@ -74,8 +81,8 @@ export const products: Product[] = [
     description: "Lualab Bloom là dòng nước hoa nữ với hương thơm tươi mát và nữ tính. Kết hợp hoa hồng, hoa nhài và vani tạo nên một mùi hương ngọt ngào và quyến rũ.",
     shortDescription: "Nước hoa nữ với hương thơm tươi mát và nữ tính",
     images: [
-      "/src/assets/sanpham3.webp",
-      "/src/assets/sanpham4.webp"
+      sp3,
+      sp4
     ],
     category: "Women",
     gender: "female",
@@ -96,8 +103,8 @@ export const products: Product[] = [
     description: "Lualab Ocean mang đến cảm giác tươi mát như gió biển. Với hương thơm của cam bergamot, hoa oải hương và hổ phách trắng, tạo nên một mùi hương trong lành và sảng khoái.",
     shortDescription: "Nước hoa với hương thơm tươi mát như gió biển",
     images: [
-      "/src/assets/sanpham4.webp",
-      "/src/assets/sanpham5.webp"
+      sp4,
+      sp5
     ],
     category: "Fresh",
     gender: "unisex",
@@ -119,8 +126,8 @@ export const products: Product[] = [
     description: "Lualab Royal là dòng nước hoa cao cấp nhất với những nguyên liệu quý hiếm. Kết hợp saffron, oud và hoa hồng Bulgaria tạo nên một mùi hương đầy sang trọng và quý phái.",
     shortDescription: "Dòng nước hoa cao cấp nhất với nguyên liệu quý hiếm",
     images: [
-      "/src/assets/sanpham5.webp",
-      "/src/assets/sanpham1.webp"
+      sp5,
+      sp1
     ],
     category: "Luxury",
     gender: "unisex",
@@ -141,8 +148,8 @@ export const products: Product[] = [
     description: "Lualab Citrus với hương thơm cam quýt tươi mát và sảng khoái. Kết hợp chanh, cam và bạc hà tạo nên một mùi hương đầy năng lượng và tích cực.",
     shortDescription: "Nước hoa với hương thơm cam quýt tươi mát",
     images: [
-      "/src/assets/sanpham1.webp",
-      "/src/assets/sanpham2.webp"
+      sp1,
+      sp2
     ],
     category: "Citrus",
     gender: "unisex",
@@ -163,8 +170,8 @@ export const products: Product[] = [
     description: "Lualab Elegance là dòng nước hoa nữ cao cấp với hương thơm tinh tế và quyến rũ. Kết hợp hoa hồng đỏ, hoa nhài và gỗ đàn hương tạo nên một mùi hương đầy nữ tính và sang trọng.",
     shortDescription: "Nước hoa nữ cao cấp với hương thơm tinh tế và quyến rũ",
     images: [
-      "/src/assets/sanpham2.webp",
-      "/src/assets/sanpham3.webp"
+      sp2,
+      sp3
     ],
     category: "Women",
     gender: "female",
@@ -185,8 +192,8 @@ export const products: Product[] = [
     description: "Lualab Adventure là dòng nước hoa nam với hương thơm mạnh mẽ và phiêu lưu. Với sự kết hợp của gỗ đàn hương, hổ phách và hạt tiêu đen, tạo nên một mùi hương đầy nam tính và bí ẩn.",
     shortDescription: "Nước hoa nam với hương thơm mạnh mẽ và phiêu lưu",
     images: [
-      "/src/assets/sanpham3.webp",
-      "/src/assets/sanpham4.webp"
+      sp3,
+      sp4
     ],
     category: "Men",
     gender: "male",
@@ -207,8 +214,8 @@ export const products: Product[] = [
     description: "Lualab Harmony là dòng nước hoa unisex với hương thơm cân bằng và hài hòa. Kết hợp cam bergamot, hoa oải hương và hổ phách trắng tạo nên một mùi hương trong lành và thư giãn.",
     shortDescription: "Nước hoa unisex với hương thơm cân bằng và hài hòa",
     images: [
-      "/src/assets/sanpham4.webp",
-      "/src/assets/sanpham5.webp"
+      sp4,
+      sp5
     ],
     category: "Fresh",
     gender: "unisex",
@@ -230,8 +237,8 @@ export const products: Product[] = [
     description: "Lualab Mystique là dòng nước hoa cao cấp với hương thơm bí ẩn và quyến rũ. Kết hợp oud, saffron và hoa hồng Bulgaria tạo nên một mùi hương đầy sang trọng và bí ẩn.",
     shortDescription: "Dòng nước hoa cao cấp với hương thơm bí ẩn và quyến rũ",
     images: [
-      "/src/assets/sanpham5.webp",
-      "/src/assets/sanpham1.webp"
+      sp5,
+      sp1
     ],
     category: "Luxury",
     gender: "unisex",
@@ -252,8 +259,8 @@ export const products: Product[] = [
     description: "Lualab Sunshine với hương thơm cam quýt tươi mát và năng động. Kết hợp chanh, cam và bạc hà tạo nên một mùi hương đầy năng lượng và tích cực.",
     shortDescription: "Nước hoa với hương thơm cam quýt tươi mát và năng động",
     images: [
-      "/src/assets/sanpham1.webp",
-      "/src/assets/sanpham2.webp"
+      sp1,
+      sp2
     ],
     category: "Citrus",
     gender: "unisex",
@@ -274,8 +281,8 @@ export const products: Product[] = [
     description: "Lualab Serenity là dòng nước hoa với hương thơm thanh tịnh và yên bình. Kết hợp hoa oải hương, hoa nhài và vani tạo nên một mùi hương thư giãn và nhẹ nhàng.",
     shortDescription: "Nước hoa với hương thơm thanh tịnh và yên bình",
     images: [
-      "/src/assets/sanpham2.webp",
-      "/src/assets/sanpham3.webp"
+      sp2,
+      sp3
     ],
     category: "Fresh",
     gender: "unisex",

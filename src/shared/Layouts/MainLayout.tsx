@@ -2,6 +2,7 @@ import { Layout, Menu, Input, Button, Badge, Space, Typography } from "antd"
 import { Outlet, Link, useNavigate } from "react-router-dom"
 import { ShoppingCartOutlined, UserOutlined, HeartOutlined } from "@ant-design/icons"
 import { useState } from "react"
+import logo from "../../assets/logo.webp";
 
 const { Header, Content, Footer } = Layout
 const { Title } = Typography
@@ -53,7 +54,7 @@ const MainLayout = () => {
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     <div style={{ display: 'flex', alignItems: 'center', marginRight: '40px' }}>
                         <img 
-                            src="/src/assets/logo.webp" 
+                            src={logo}
                             alt="Lualab Logo" 
                             style={{ height: '40px', marginRight: '12px' }}
                         />
