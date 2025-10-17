@@ -279,6 +279,7 @@ const Products = () => {
                                                 
                                                 localStorage.setItem('cart', JSON.stringify(cart))
                                                 message.success('Đã thêm vào giỏ hàng')
+                                                window.dispatchEvent(new Event('cartUpdated'))
                                             }}
                                         >
                                             Thêm vào giỏ

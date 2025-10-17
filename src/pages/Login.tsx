@@ -20,6 +20,7 @@ const Login = () => {
                 // Admin login logic
                 if (values.username === 'admin' && values.password === 'admin123') {
                     message.success('Đăng nhập admin thành công!')
+                    localStorage.setItem('role', 'admin')
                     navigate('/admin')
                 } else {
                     message.error('Tài khoản hoặc mật khẩu không đúng!')
@@ -28,6 +29,7 @@ const Login = () => {
                 // User login logic
                 if (values.username === 'user' && values.password === 'user123') {
                     message.success('Đăng nhập thành công!')
+                    localStorage.setItem('role', 'user')
                     navigate('/')
                 } else {
                     message.error('Tài khoản hoặc mật khẩu không đúng!')

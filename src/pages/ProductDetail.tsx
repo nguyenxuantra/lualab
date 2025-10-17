@@ -13,7 +13,8 @@ import {
     Tabs,
     Image,
     Empty,
-    Breadcrumb
+    Breadcrumb,
+    message
 } from "antd"
 import { 
     ShoppingCartOutlined, 
@@ -47,8 +48,17 @@ const ProductDetail = () => {
     }
 
     const handleAddToCart = () => {
-        // TODO: Implement add to cart functionality
-        console.log('Add to cart:', product?.name, 'Quantity:', quantity)
+        if (!product) return
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+        const existingItem = cart.find((item: any) => item.id === product.id)
+        if (existingItem) {
+            existingItem.quantity += quantity
+        } else {
+            cart.push({ id: product.id, quantity })
+        }
+        localStorage.setItem('cart', JSON.stringify(cart))
+        message.success('Đã thêm vào giỏ hàng')
+        window.dispatchEvent(new Event('cartUpdated'))
     }
 
     const handleWishlist = () => {

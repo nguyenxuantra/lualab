@@ -62,7 +62,7 @@ const AdminLayout = () => {
             icon: <LogoutOutlined />,
             label: 'Đăng xuất',
             onClick: () => {
-                // Handle logout
+                localStorage.removeItem('role')
                 navigate('/')
             }
         },
@@ -107,7 +107,11 @@ const AdminLayout = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                    position: 'sticky',
+                    top: 0,
+                    zIndex: 1000,
+                    height: '64px',
                 }}>
                     <Button
                         type="text"

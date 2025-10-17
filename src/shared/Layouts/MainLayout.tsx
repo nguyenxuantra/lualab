@@ -1,7 +1,7 @@
 import { Layout, Menu, Input, Button, Badge, Space, Typography } from "antd"
 import { Outlet, Link, useNavigate } from "react-router-dom"
 import { ShoppingCartOutlined, UserOutlined, HeartOutlined } from "@ant-design/icons"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import logo from "../../assets/logo.webp";
 
 const { Header, Content, Footer } = Layout
@@ -10,6 +10,25 @@ const { Title } = Typography
 const MainLayout = () => {
     const navigate = useNavigate()
     const [searchValue, setSearchValue] = useState("")
+    const [cartCount, setCartCount] = useState(0)
+
+    const getCartCount = () => {
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]') as Array<{id:number, quantity:number}>
+        const total = cart.reduce((sum, item) => sum + (item.quantity || 0), 0)
+        setCartCount(total)
+    }
+
+    useEffect(() => {
+        getCartCount()
+        const onCartUpdated = () => getCartCount()
+        window.addEventListener('cartUpdated', onCartUpdated)
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'cart') getCartCount()
+        })
+        return () => {
+            window.removeEventListener('cartUpdated', onCartUpdated)
+        }
+    }, [])
 
     const handleSearch = () => {
         if (searchValue.trim()) {
@@ -75,19 +94,17 @@ const MainLayout = () => {
                 </div>
                 
                 <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
-                    <Space size="middle" align="center">
+                    <Space size="middle" align="center" >
                         <Input.Search
                             placeholder="Tìm kiếm nước hoa..."
                             value={searchValue}
                             onChange={(e) => setSearchValue(e.target.value)}
                             onSearch={handleSearch}
-                            style={{ width: 300, 
-                                marginTop: '15px'
-                             }}
+                            style={{ width: 300, marginTop:15 }}
                             enterButton
                         />
                         <Button type="text" icon={<HeartOutlined />} style={{ color: 'white' }} />
-                    <Badge count={0} showZero>
+                    <Badge count={cartCount} showZero>
                         <Link to="/cart">
                             <Button type="text" icon={<ShoppingCartOutlined />} style={{ color: 'white' }} />
                         </Link>

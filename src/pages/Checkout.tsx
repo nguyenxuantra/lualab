@@ -73,13 +73,13 @@ const Checkout = () => {
         return cartItems.reduce((total, item) => total + item.quantity, 0)
     }
 
-    const handleSubmit = (values: any) => {
-        console.log('Checkout values:', values)
+    const handleSubmit = () => {
+        // Simulate submit
         setIsModalVisible(true)
     }
 
     const handlePaymentSuccess = () => {
-        // Clear cart
+        // Clear cart and notify then redirect
         localStorage.removeItem('cart')
         message.success('Đặt hàng thành công!')
         navigate('/')
@@ -379,6 +379,7 @@ const Checkout = () => {
                     <CheckCircleOutlined style={{ fontSize: '48px', color: '#52c41a', marginBottom: '16px' }} />
                     <p>Cảm ơn bạn đã đặt hàng tại Lualab!</p>
                     <p>Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất để xác nhận đơn hàng.</p>
+                    <p style={{ marginTop: '8px', color: '#888' }}>Bạn sẽ được chuyển về trang chủ sau khi bấm Hoàn thành.</p>
                 </div>
             </Modal>
         </div>
